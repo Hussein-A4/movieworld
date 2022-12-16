@@ -37,10 +37,15 @@ let id = props.id
     <div class="modal-outer-container" @click.self="emits('toggleModal')">
       <div class="modal-inner-container" v-if="movieData">
         <button class="close-button" @click="emits('toggleModal')">X</button>
-        <h1>{{ movieData.data.title }}</h1>
-        <h1>{{ movieData.data.release_date }}</h1>
-        <button>purchase</button>
-        <img id="image" :src="`https://image.tmdb.org/t/p/w500${movieData.data.poster_path}`" alt="no image" />
+        <div class="grid-container">
+          <div class="grid-item">
+            <h1>{{ movieData.data.title }}</h1>
+            <h1>{{ movieData.data.release_date }}</h1>
+            <button class="purchase-btn">Purchase</button>
+            <p>{{ movieData.data.overview }}</p>
+          </div> 
+            <img id="image" :src="`https://image.tmdb.org/t/p/w500${movieData.data.poster_path}`" alt="no image" />
+        </div>
       </div>
     </div>
   </Teleport>
@@ -82,5 +87,33 @@ let id = props.id
 #image{
   width: 200px;
   aspect-ratio: 2/3;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+p{
+  font-size: larger;
+}
+
+.purchase-btn{
+  text-align: center;
+  background-color: rgb(0, 247, 255);
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  flex: auto;
+  padding: 10px;
+  margin: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 15px;
+  text-align: center;
 }
 </style>

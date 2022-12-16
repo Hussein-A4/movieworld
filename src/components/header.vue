@@ -30,7 +30,6 @@ h1{
 .sign_in{
   text-align: center;
   background-color: chartreuse;
-  /* align-content: center; */
   width: 100px;
   height: 50px;
   font-size: 15px;

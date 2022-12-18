@@ -39,8 +39,6 @@ const login = () => {
   width: 100vw;
   height: 100vh;
   font-size: 3rem;
-  /* background-color: black; */
-  color: rgb(0, 0, 0);
   padding: 20px;
 }
 
@@ -50,7 +48,7 @@ form {
 }
 
 .login {
-  background-color: rgb(13, 155, 101);
+  background-color: #A9D2D5;
   width: 300px;
   color: white;
   font-size: 20px;

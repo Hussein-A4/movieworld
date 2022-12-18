@@ -9,6 +9,7 @@ const emits = defineEmits(["toggleModal"]);
 const movies = ref(null);
 const movieData = ref(null);
 
+
 const store = useStore();
 
 const getMovie = async () => {
@@ -21,6 +22,10 @@ const getMovie = async () => {
     })
   )
 };
+
+const addCart = (movieData) => {
+  store.addToCart(movieData)
+}
 
 
 getMovie();
@@ -41,7 +46,7 @@ let id = props.id
           <div class="grid-item">
             <h1>{{ movieData.data.title }}</h1>
             <h1>{{ movieData.data.release_date }}</h1>
-            <button class="purchase-btn">Purchase</button>
+            <button class="purchase-btn" @click="addCart(movieData.data)">Add to Cart</button>
             <p>{{ movieData.data.overview }}</p>
           </div> 
             <img id="image" :src="`https://image.tmdb.org/t/p/w500${movieData.data.poster_path}`" alt="no image" />
@@ -68,7 +73,6 @@ let id = props.id
 .modal-outer-container .modal-inner-container {
   background-color: #abcbeb;
   width: clamp(280px, 100%, 800px);
-  height: 400px;
   position: relative;
   border: 10px;
 }
@@ -92,7 +96,7 @@ let id = props.id
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
-  background-color: #2196F3;
+  background-color: #766C7F;
   padding: 10px;
 }
 
@@ -111,7 +115,7 @@ p{
   margin: 10px;
 }
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #808d8e;
   border: 1px solid rgba(0, 0, 0, 0.8);
   font-size: 15px;
   text-align: center;

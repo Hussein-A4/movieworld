@@ -10,7 +10,6 @@ const showModal = ref(false);
 const selectedId = ref(0);
 
 var moviesData = []
-var cartData = []
 
 // extract specific store properties
 const { movies, getMovies } = storeToRefs(main)
@@ -31,31 +30,50 @@ const closeModal = () => {
 </script>
 
 <template>
-    <h1>Purchase</h1>
-    <RouterLink to="/cart" custom v-slot="{ navigate }">
-            <button @click="navigate" role="link" class="purchase">Purchase</button>
-    </RouterLink>
+    <div class="top">
+        <h1 class="purchase">Purchase</h1>
+        <RouterLink to="/cart" custom v-slot="{ navigate }">
+            <button @click="navigate" role="link" class="cart"><font-awesome-icon icon="fa-solid fa-cart-shopping" /></button>
+        </RouterLink>
+    </div>
     <div class="images">
     <img v-for="movie in moviesData" :src="movie.poster" @click="openModal(movie.id)"/>
     </div>
     <div class="siteModal">
         <modal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
     </div>
+
 </template>
 
 <style scoped>
 img{
     aspect-ratio: 2/3;
     width: 200px;
-    gap: 1rem;
 }
 
 .images{
     align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
 }
 
-.purchase{
+.cart{
+    font-size: 30px;
     float: right;
-    right: 10px;
+    margin-right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.purchase {
+    float: left;
+    margin-left: 15px;
+}
+
+.top {
+    margin-top: 20px;
 }
 </style>

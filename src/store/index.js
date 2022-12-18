@@ -5,6 +5,7 @@ export const useStore = defineStore('store', {
   state: () => {
     return {
       movies: [],
+      cartData: [],
     }
   },
   actions: {
@@ -22,5 +23,10 @@ export const useStore = defineStore('store', {
         }
       });
     },
+    addToCart(movieData) {
+      if(!this.cartData.some(arrayItem => arrayItem.id == movieData.id)) {
+        this.cartData.push(movieData);
+      }
+    }
   }
 });

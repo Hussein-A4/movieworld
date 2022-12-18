@@ -15,7 +15,7 @@
 
 <style scoped>
 h1{
-  color: rgb(22, 32, 59);
+  color: rgb(255, 255, 255);
   text-align: center;
   padding: 20px;
 }
@@ -29,7 +29,7 @@ h1{
 
 .sign_in{
   text-align: center;
-  background-color: chartreuse;
+  background-color: #A9D2D5;
   width: 100px;
   height: 50px;
   font-size: 15px;

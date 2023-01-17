@@ -3,6 +3,7 @@ import homeView from "../views/homeView.vue";
 import loginView from "../views/loginView.vue";
 import purchaseView from "../views/purchaseView.vue";
 import cartView from "../views/cartView.vue";
+import RegisterView from "../views/RegisterView.vue";
 
 const routes = [
   {
@@ -20,6 +21,10 @@ const routes = [
   {
     path: '/cart',
     component: cartView
+  },
+  {
+    path: '/register',
+    component: RegisterView,
   },
 ];
 

@@ -8,6 +8,9 @@
         <RouterLink to="/login" custom v-slot="{ navigate }">
             <button @click="navigate" role="link" class="sign_in">Login</button>
         </RouterLink>
+        <RouterLink to="/register" custom v-slot="{ navigate }">
+          <button @click="navigate" role="link" class="register">Register</button>
+        </RouterLink>
         <img src="../assets/Movieworld.png" class="centuryImg" />
     </div>
   </div>
@@ -15,7 +18,7 @@
 
 <style scoped>
 h1{
-  color: rgb(255, 255, 255);
+  color: rgb(22, 32, 59);
   text-align: center;
   padding: 20px;
 }
@@ -29,12 +32,27 @@ h1{
 
 .sign_in{
   text-align: center;
-  background-color: #A9D2D5;
+  background-color: chartreuse;
+  /* align-content: center; */
   width: 100px;
   height: 50px;
   font-size: 15px;
   flex: auto;
   padding: 10px;
+  display: inline;
+}
+
+.register{
+  text-align: center;
+  background-color: chartreuse;
+  /* align-content: center; */
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+  flex: auto;
+  padding: 10px;
+  display: inline;
+  right: auto;
 }
 
 .centuryImg{
